@@ -1,5 +1,5 @@
 # Control App
-A Python generated GUI that allows a user to control Group B.1's vehicle.
+A Python generated GUI that allows a user to control a vehicle using a Raspberry Pi 4, servo motors, and DC motors. 
 
 ## Developer Documentation
 
