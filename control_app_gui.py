@@ -14,7 +14,6 @@ position2 = 100
 pwm1.start(position1)
 pwm2.start(position2)
 
-
 # Function to initialize DC motors
 def init():
     GPIO.setmode(GPIO.BCM)
@@ -22,7 +21,6 @@ def init():
     GPIO.setup(22, GPIO.OUT)
     GPIO.setup(23, GPIO.OUT)
     GPIO.setup(24, GPIO.OUT)
-
 
 # Function to move car forward
 def forward(tf):
@@ -34,7 +32,6 @@ def forward(tf):
     time.sleep(tf)
     stop()
 
-
 # Function to move car backward
 def backward(tf):
     init()
@@ -45,15 +42,12 @@ def backward(tf):
     time.sleep(tf)
     stop()
 
-
 # Function to stop motors
 def stop():
     GPIO.output(17, False)
     GPIO.output(22, False)
     GPIO.output(23, False)
     GPIO.output(24, False)
-
-# ----- Start code written by CS designer ----- #
 
 # Initialize GUI
 root = Tk()
@@ -78,7 +72,6 @@ canvas.create_text(300, 200, font=("Purisa", 16), text="W = Forward, S = Backwar
 canvas.pack(fill=BOTH, expand=1)
 root.update_idletasks()
 root.update()
-# ----- End code written by CS designer ----- #
 
 def getkey():  # Get user key press
     old_settings = termios.tcgetattr(sys.stdin)
@@ -99,8 +92,6 @@ def getkey():  # Get user key press
     finally:
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
 
-
-# ----- Start code written by CS designer ----- #
 try:
     while True:
         k = getkey()
@@ -161,7 +152,6 @@ try:
         canvas.pack(fill=BOTH, expand=1)
         root.update_idletasks()
         root.update()
-# ----- End code written by CS designer ----- #
 
 except (KeyboardInterrupt, SystemExit):
     os.system('stty sane')
